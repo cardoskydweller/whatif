@@ -1,0 +1,1 @@
+{"parameters": {"cfg": {"type": "secureObject"}}, "variables": {"a": "db.example.test"}, "resources": []}

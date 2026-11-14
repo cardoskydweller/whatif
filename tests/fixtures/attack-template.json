@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "dbPass": {"type": "string"},
+    "gwCertData": {"type": "string"},
+    "lawShared": {"type": "string"},
+    "adminPassword": {"type": "securestring"},
+    "smtpPassDefault": {"type": "string", "defaultValue": "FakeDefault77"},
+    "envName": {"type": "string"}
+  },
+  "resources": []
+}

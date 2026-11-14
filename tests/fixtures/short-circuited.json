@@ -1,0 +1,24 @@
+{
+  "changes": [
+    {
+      "after": null,
+      "before": null,
+      "changeType": "Unsupported",
+      "delta": null,
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Web/sites/func-ex-qa",
+      "unsupportedReason": "The value sig=fake-sig-EEEE cannot be evaluated."
+    }
+  ],
+  "diagnostics": [
+    {
+      "additionalInfo": null,
+      "code": "NestedDeploymentShortCircuited",
+      "level": "Warning",
+      "message": "A nested deployment got short-circuited and all its resources got skipped from validation. This is due to a nested template having a parameter (value=fake-key-DDDD) that was not fully evaluated.",
+      "target": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Resources/deployments/ex-nested"
+    }
+  ],
+  "error": null,
+  "potentialChanges": null,
+  "status": "Succeeded"
+}

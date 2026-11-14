@@ -1,0 +1,9 @@
+[package]
+name = "whatif"
+version = "0.1.0"
+edition = "2024"
+description = "An Azure deployment what-if read as one line per resource, with secret values masked (read-only)"
+
+[dependencies]
+serde_json = "1"
+toolcrates-sha256 = { git = "https://github.com/cardoskydweller/toolcrates", tag = "v0.2.0" }

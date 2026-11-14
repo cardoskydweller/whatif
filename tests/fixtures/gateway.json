@@ -1,0 +1,165 @@
+{
+  "changes": [
+    {
+      "after": {"name": "nsg-ex-qa", "properties": {"securityRules": []}},
+      "before": {"name": "nsg-ex-qa", "properties": {"securityRules": []}},
+      "changeType": "NoChange",
+      "delta": null,
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Network/networkSecurityGroups/nsg-ex-qa",
+      "unsupportedReason": null
+    },
+    {
+      "after": {"name": "pip-ex-qa"},
+      "before": {"name": "pip-ex-qa"},
+      "changeType": "Ignore",
+      "delta": null,
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Network/publicIPAddresses/pip-ex-qa",
+      "unsupportedReason": null
+    },
+    {
+      "after": {"name": "allow-ex", "properties": {"priority": 300}},
+      "before": null,
+      "changeType": "Create",
+      "delta": null,
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Network/networkSecurityGroups/nsg-ex-qa/securityRules/allow-ex",
+      "unsupportedReason": null
+    },
+    {
+      "after": {
+        "name": "apim-ex-qa",
+        "properties": {
+          "customProperties": {},
+          "publicNetworkAccess": "Disabled"
+        },
+        "zones": ["3", "1", "2"]
+      },
+      "before": {
+        "name": "apim-ex-qa",
+        "properties": {
+          "customProperties": {
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "False"
+          },
+          "enableHttp2": true,
+          "privateLinkIpConfigurations": [{"name": "plc-ex", "properties": {"privateIPAddress": "10.0.0.4"}}],
+          "provisioningState": "Succeeded",
+          "publicNetworkAccess": "Enabled"
+        },
+        "zones": ["1", "2", "3"]
+      },
+      "changeType": "Modify",
+      "delta": [
+        {
+          "after": null,
+          "before": null,
+          "children": [
+            {
+              "after": null,
+              "before": "False",
+              "children": null,
+              "path": "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10",
+              "propertyChangeType": "Delete"
+            }
+          ],
+          "path": "properties.customProperties",
+          "propertyChangeType": "Modify"
+        },
+        {
+          "after": "Microsoft.Keyvault",
+          "before": "Microsoft.Storage",
+          "children": null,
+          "path": "properties.encryption.keySource",
+          "propertyChangeType": "Modify"
+        },
+        {
+          "after": null,
+          "before": true,
+          "children": null,
+          "path": "properties.enableHttp2",
+          "propertyChangeType": "Delete"
+        },
+        {
+          "after": null,
+          "before": [{"name": "plc-ex", "properties": {"privateIPAddress": "10.0.0.4"}}],
+          "children": null,
+          "path": "properties.privateLinkIpConfigurations",
+          "propertyChangeType": "Delete"
+        },
+        {
+          "after": "Succeeded",
+          "before": null,
+          "children": null,
+          "path": "properties.provisioningState",
+          "propertyChangeType": "NoEffect"
+        },
+        {
+          "after": "Disabled",
+          "before": "Enabled",
+          "children": null,
+          "path": "properties.publicNetworkAccess",
+          "propertyChangeType": "Modify"
+        },
+        {
+          "after": null,
+          "before": null,
+          "children": [
+            {"after": "3", "before": "1", "children": null, "path": "0", "propertyChangeType": "Modify"},
+            {"after": "1", "before": "2", "children": null, "path": "1", "propertyChangeType": "Modify"},
+            {"after": "2", "before": "3", "children": null, "path": "2", "propertyChangeType": "Modify"}
+          ],
+          "path": "zones",
+          "propertyChangeType": "Array"
+        }
+      ],
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.ApiManagement/service/apim-ex-qa",
+      "unsupportedReason": null
+    },
+    {
+      "after": {
+        "name": "nsg-ex-gw-qa",
+        "properties": {"securityRules": [{"name": "allow-ex", "properties": {"priority": 200}}]}
+      },
+      "before": {
+        "name": "nsg-ex-gw-qa",
+        "properties": {
+          "securityRules": [
+            {"name": "allow-ex", "properties": {"priority": 100}},
+            {"name": "deny-ex", "properties": {"priority": 4096, "access": "Deny"}}
+          ]
+        }
+      },
+      "changeType": "Modify",
+      "delta": [
+        {
+          "after": null,
+          "before": null,
+          "children": [
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {"after": 200, "before": 100, "children": null, "path": "properties.priority", "propertyChangeType": "Modify"}
+              ],
+              "path": "0",
+              "propertyChangeType": "Modify"
+            },
+            {
+              "after": null,
+              "before": {"name": "deny-ex", "properties": {"priority": 4096, "access": "Deny"}},
+              "children": null,
+              "path": "1",
+              "propertyChangeType": "Delete"
+            }
+          ],
+          "path": "properties.securityRules",
+          "propertyChangeType": "Array"
+        }
+      ],
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Network/networkSecurityGroups/nsg-ex-gw-qa",
+      "unsupportedReason": null
+    }
+  ],
+  "diagnostics": [],
+  "error": null,
+  "potentialChanges": null,
+  "status": "Succeeded"
+}

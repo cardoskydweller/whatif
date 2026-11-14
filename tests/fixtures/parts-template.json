@@ -1,0 +1,1 @@
+{"parameters":{"adminPassword":{"type":"securestring"}},"variables":{"a":"rg-fakeadmin","b":"[concat('secure_', parameters('adminPassword'))]","c":"zone-7"},"resources":[]}

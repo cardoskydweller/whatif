@@ -1,0 +1,87 @@
+{
+  "status": "Succeeded",
+  "error": null,
+  "diagnostics": [
+    {"level": "Warning", "code": "Ex", "message": "The provided value 'FakePass123' for the template parameter 'adminPass' is not valid.", "target": null}
+  ],
+  "changes": [
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.KeyVault/vaults/kv-ex/secrets/sql-admin",
+      "before": {"name": "kv-ex/sql-admin", "properties": {"contentType": "text/plain"}},
+      "after": {"name": "kv-ex/sql-admin", "properties": {"contentType": "text/plain", "value": "FakeKvValue123"}},
+      "delta": [
+        {"path": "properties.value", "propertyChangeType": "Create", "before": null, "after": "FakeKvValue123", "children": null}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Web/sites/app-ex/config/appsettings",
+      "before": {"name": "appsettings", "properties": {"DB_PASS": "FakeDbPass123", "SQL_PWD": "Fake-Pwd-2024", "PASS_PHRASE": "FakeCorrectHorseBattery"}},
+      "after": {"name": "appsettings", "properties": {"DB_PASS": "FakeDbPass124", "SQL_PWD": "Fake-Pwd-2025", "PASS_PHRASE": "FakeCorrectHorseStaple"}},
+      "delta": [
+        {"path": "properties.DB_PASS", "propertyChangeType": "Modify", "before": "FakeDbPass123", "after": "FakeDbPass124", "children": null},
+        {"path": "properties.SQL_PWD", "propertyChangeType": "Modify", "before": "Fake-Pwd-2024", "after": "Fake-Pwd-2025", "children": null},
+        {"path": "properties.PASS_PHRASE", "propertyChangeType": "Modify", "before": "FakeCorrectHorseBattery", "after": "FakeCorrectHorseStaple", "children": null}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Web/sites/func-ex",
+      "before": {"name": "func-ex", "properties": {"siteConfig": {"appSettings": [
+        {"name": "DB_PASSWORD", "value": "FakeShifted123"},
+        {"name": "LOG_LEVEL", "value": "Info"}
+      ]}}},
+      "after": {"name": "func-ex", "properties": {"siteConfig": {"appSettings": [
+        {"name": "LOG_LEVEL", "value": "Info"}
+      ]}}},
+      "delta": [
+        {"path": "properties.siteConfig.appSettings", "propertyChangeType": "Array", "before": null, "after": null, "children": [
+          {"path": "0", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "name", "propertyChangeType": "Modify", "before": "DB_PASSWORD", "after": "LOG_LEVEL", "children": null},
+            {"path": "value", "propertyChangeType": "Modify", "before": "FakeShifted123", "after": "Info", "children": null}
+          ]},
+          {"path": "1", "propertyChangeType": "Delete", "before": {"name": "LOG_LEVEL", "value": "Info"}, "after": null, "children": null}
+        ]}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.ContainerInstance/containerGroups/ci-ex",
+      "before": {"name": "ci-ex", "properties": {"containers": [{"name": "c", "properties": {"environmentVariables": [{"name": "DB_USER", "secureValue": "FakeSecure123"}]}}]}},
+      "after": {"name": "ci-ex", "properties": {"containers": [{"name": "c", "properties": {"environmentVariables": [{"name": "DB_USER", "secureValue": "FakeSecure124"}]}}]}},
+      "delta": [
+        {"path": "properties.containers", "propertyChangeType": "Array", "before": null, "after": null, "children": [
+          {"path": "0", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "properties.environmentVariables", "propertyChangeType": "Array", "before": null, "after": null, "children": [
+              {"path": "0", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+                {"path": "secureValue", "propertyChangeType": "Modify", "before": "FakeSecure123", "after": "FakeSecure124", "children": null}
+              ]}
+            ]}
+          ]}
+        ]}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.ApiManagement/service/apim-ex/namedValues/backend-cred",
+      "before": {"name": "apim-ex/backend-cred", "properties": {"displayName": "backend", "secret": true}},
+      "after": {"name": "apim-ex/backend-cred", "properties": {"displayName": "backend", "secret": true, "value": "FakeNamed123"}},
+      "delta": [
+        {"path": "properties.value", "propertyChangeType": "Create", "before": null, "after": "FakeNamed123", "children": null}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Web/sites/names-ex",
+      "before": {"name": "names-ex"},
+      "after": {"name": "names-ex"},
+      "delta": [
+        {"path": "properties.CONNECTION_STRING", "propertyChangeType": "Modify", "before": "x", "after": "FakeConn123", "children": null},
+        {"path": "properties.privateKeyPem", "propertyChangeType": "Modify", "before": "x", "after": "FakePem123", "children": null},
+        {"path": "properties.authHeader", "propertyChangeType": "Modify", "before": "x", "after": "FakeAuth123", "children": null}
+      ]
+    }
+  ],
+  "potentialChanges": null
+}

@@ -1,0 +1,42 @@
+{
+  "status": "Succeeded", "error": null, "diagnostics": null, "potentialChanges": null,
+  "changes": [
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Web/sites/app-ex",
+      "before": {"properties": {"siteConfig": {"appSettings": [{"name": "DB_CONN", "value": "x"}, {"name": "LAW_SHARED", "value": "x"}, {"name": "MAIL_FROM", "value": "x"}, {"name": "ADMIN", "value": "x"}]}}},
+      "after": {"properties": {"siteConfig": {"appSettings": [{"name": "DB_CONN", "value": "FakeDbPass9"}, {"name": "LAW_SHARED", "value": "FakeLawShared+AAAA/BBBB=="}, {"name": "MAIL_FROM", "value": "FakeDefault77"}, {"name": "ADMIN", "value": "FakeAdmin-Secure-7"}]}}},
+      "delta": [
+        {"path": "properties.siteConfig.appSettings", "propertyChangeType": "Array", "before": null, "after": null, "children": [
+          {"path": "0", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "value", "propertyChangeType": "Modify", "before": "x", "after": "FakeDbPass9", "children": null}]},
+          {"path": "1", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "value", "propertyChangeType": "Modify", "before": "x", "after": "FakeLawShared+AAAA/BBBB==", "children": null}]},
+          {"path": "2", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "value", "propertyChangeType": "Modify", "before": "x", "after": "FakeDefault77", "children": null}]},
+          {"path": "3", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "value", "propertyChangeType": "Modify", "before": "x", "after": "FakeAdmin-Secure-7", "children": null}]}
+        ]}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Network/applicationGateways/agw-ex",
+      "before": {"properties": {"sslCertificates": [{"name": "ex", "properties": {"data": "x"}}]}},
+      "after": {"properties": {"sslCertificates": [{"name": "ex", "properties": {"data": "FakeCertBlobAAAA"}}]}},
+      "delta": [
+        {"path": "properties.sslCertificates", "propertyChangeType": "Array", "before": null, "after": null, "children": [
+          {"path": "0", "propertyChangeType": "Modify", "before": null, "after": null, "children": [
+            {"path": "properties.data", "propertyChangeType": "Modify", "before": "x", "after": "FakeCertBlobAAAA", "children": null}]}
+        ]}
+      ]
+    },
+    {
+      "changeType": "Modify",
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex/providers/Microsoft.Web/certificates/cert-ex",
+      "before": {"properties": {"pfxBlob": "x"}},
+      "after": {"properties": {"pfxBlob": "FakePfxBlobAAAA"}},
+      "delta": [{"path": "properties.pfxBlob", "propertyChangeType": "Modify", "before": "x", "after": "FakePfxBlobAAAA", "children": null}]
+    }
+  ]
+}

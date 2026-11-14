@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "prefix": {"type": "string"},
+    "environmentType": {"type": "string", "allowedValues": ["qa", "prod"]},
+    "workspaceId": {"type": "string"},
+    "mode": {"type": "string", "defaultValue": "PlainDefault"},
+    "adminPassword": {"type": "securestring", "defaultValue": "FakeDefault123"},
+    "settings": {"type": "secureObject", "defaultValue": {"k": "FakeObjectDefault123"}}
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2023-12-01",
+      "name": "[format('{0}-func-{1}', parameters('prefix'), parameters('environmentType'))]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "publicNetworkAccess": "[if(equals(parameters('environmentType'), 'prod'), 'Enabled-or-Off', 'Disabled')]",
+        "note": "[concat('it''s', parameters('mode'))]",
+        "siteConfig": {"minTlsVersion": "Tls1_2", "httpPort": "443"}
+      },
+      "sku": {"name": "Standard_v2", "tier": "Premium"}
+    }
+  ]
+}

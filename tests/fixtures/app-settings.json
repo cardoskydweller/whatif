@@ -1,0 +1,102 @@
+{
+  "changes": [
+    {
+      "after": {
+        "name": "func-ex-qa",
+        "properties": {
+          "siteConfig": {
+            "appSettings": [
+              {"name": "AzureWebJobsStorage", "value": "DefaultEndpointsProtocol=https;AccountName=stexqa;AccountKey=fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA==;EndpointSuffix=core.windows.net"},
+              {"name": "ExApiKey", "value": "short-secreX"},
+              {"name": "FeatureFlag", "value": "Disabled"},
+              {"name": "SiteName", "value": "ex-func-qa"},
+              {"name": "LawId", "value": "/subscriptions/0/resourceGroups/rg-qa/providers/x/fake-workspace-id"}
+            ]
+          }
+        }
+      },
+      "before": {
+        "name": "func-ex-qa",
+        "properties": {
+          "siteConfig": {
+            "appSettings": [
+              {"name": "AzureWebJobsStorage", "value": "DefaultEndpointsProtocol=https;AccountName=stexqa;AccountKey=fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB==;EndpointSuffix=core.windows.net"},
+              {"name": "ExApiKey", "value": "short-secret"},
+              {"name": "FeatureFlag", "value": "Enabled"},
+              {"name": "SiteName", "value": "FakeAdmin123"},
+              {"name": "LawId", "value": "Enabled"}
+            ]
+          }
+        }
+      },
+      "changeType": "Modify",
+      "delta": [
+        {
+          "after": null,
+          "before": null,
+          "children": [
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {
+                  "after": "DefaultEndpointsProtocol=https;AccountName=stexqa;AccountKey=fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA0000fake-key-AAAA==;EndpointSuffix=core.windows.net",
+                  "before": "DefaultEndpointsProtocol=https;AccountName=stexqa;AccountKey=fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB0000fake-key-BBBB==;EndpointSuffix=core.windows.net",
+                  "children": null,
+                  "path": "value",
+                  "propertyChangeType": "Modify"
+                }
+              ],
+              "path": "0",
+              "propertyChangeType": "Modify"
+            },
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {"after": "short-secreX", "before": "short-secret", "children": null, "path": "value", "propertyChangeType": "Modify"}
+              ],
+              "path": "1",
+              "propertyChangeType": "Modify"
+            },
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {"after": "Disabled", "before": "Enabled", "children": null, "path": "value", "propertyChangeType": "Modify"}
+              ],
+              "path": "2",
+              "propertyChangeType": "Modify"
+            },
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {"after": "ex-func-qa", "before": "FakeAdmin123", "children": null, "path": "value", "propertyChangeType": "Modify"}
+              ],
+              "path": "3",
+              "propertyChangeType": "Modify"
+            },
+            {
+              "after": null,
+              "before": null,
+              "children": [
+                {"after": "/subscriptions/0/resourceGroups/rg-qa/providers/x/fake-workspace-id", "before": "Enabled", "children": null, "path": "value", "propertyChangeType": "Modify"}
+              ],
+              "path": "4",
+              "propertyChangeType": "Modify"
+            }
+          ],
+          "path": "properties.siteConfig.appSettings",
+          "propertyChangeType": "Array"
+        }
+      ],
+      "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-ex-qa/providers/Microsoft.Web/sites/func-ex-qa",
+      "unsupportedReason": null
+    }
+  ],
+  "diagnostics": null,
+  "error": null,
+  "potentialChanges": null,
+  "status": "Succeeded"
+}
